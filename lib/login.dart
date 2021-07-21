@@ -126,7 +126,7 @@ class LoginState extends State<Login> {
         ),
         Container(
           padding: EdgeInsets.only(left: 15, right: 15),
-          height: 60,
+          height: 50,
           decoration: BoxDecoration(
               border: Border.all(color: kTextLightColor),
               borderRadius: BorderRadius.circular(25)),

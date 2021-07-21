@@ -36,34 +36,44 @@ class CommandeState extends State<Commande> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      post["name"],
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      post["brand"],
-                      style: const TextStyle(fontSize: 17, color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      "${post["price"]}",
-                      style: const TextStyle(
-                          fontSize: 17,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
+                Container(
+                  width: 150,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        post["name"],
+                        style: const TextStyle(
+                            fontSize: 17, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        post["brand"],
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "${post["price"]}",
+                        style: const TextStyle(
+                            fontSize: 17,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
-                Image.asset(
-                  "images/${post["image"]}",
-                  height: 70,
-                )
+                Container(
+                    width: 80.0,
+                    height: 80.0,
+                    decoration: new BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: new DecorationImage(
+                        image: new ExactAssetImage("images/${post["image"]}"),
+                        fit: BoxFit.cover,
+                      ),
+                    ))
               ],
             ),
           )));
@@ -172,7 +182,7 @@ class CategoriesScroller extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Container(
-                width: 150,
+                width: 170,
                 margin: EdgeInsets.only(right: 20),
                 height: categoryHeight,
                 decoration: BoxDecoration(
@@ -202,7 +212,7 @@ class CategoriesScroller extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 150,
+                width: 170,
                 margin: EdgeInsets.only(right: 20),
                 height: categoryHeight,
                 decoration: BoxDecoration(
@@ -234,7 +244,7 @@ class CategoriesScroller extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 150,
+                width: 170,
                 margin: EdgeInsets.only(right: 20),
                 height: categoryHeight,
                 decoration: BoxDecoration(

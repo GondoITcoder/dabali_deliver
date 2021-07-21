@@ -64,7 +64,7 @@ class LivraisonState extends State<Livraison> {
                   (post["name"][0] == "T")
                       ? "images/img_livraison_effectuer.jpg"
                       : "images/img_livraison_annuler.jpeg",
-                  height: 70,
+                  height: 35,
                 )
               ],
             ),
