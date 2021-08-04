@@ -1,7 +1,7 @@
-import 'package:dabali_deliver/constants.dart';
-import 'package:dabali_deliver/home.dart';
+import 'package:dabali_deliver/widgets/couleur.dart';
+import 'package:dabali_deliver/screens/dashboard.dart';
 import 'package:flutter/material.dart';
-export 'package:dabali_deliver/constants.dart';
+export 'package:dabali_deliver/widgets/couleur.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -97,7 +97,8 @@ class LoginState extends State<Login> {
                             Navigator.pop(context);
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Home()),
+                              MaterialPageRoute(
+                                  builder: (context) => Dashboard()),
                             );
                           }),
                     ),

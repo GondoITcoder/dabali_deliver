@@ -1,17 +1,18 @@
-import 'package:dabali_deliver/constants.dart';
-import 'package:dabali_deliver/verifierlivraison.dart';
+import 'package:dabali_deliver/widgets/couleur.dart';
+import 'package:dabali_deliver/screens/details_livraison.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'categorie.dart';
-import 'navbar.dart';
+import '../widgets/modelCard.dart';
+import '../widgets/navbar.dart';
 
-class Home extends StatefulWidget {
+class Dashboard extends StatefulWidget {
   @override
-  HomeState createState() => HomeState();
+  DashboardState createState() => DashboardState();
 }
 
-class HomeState extends State<Home> {
+class DashboardState extends State<Dashboard> {
+  late int code;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,44 +41,32 @@ class HomeState extends State<Home> {
                     placeholderStyle: TextStyle(color: kTextColor),
                     backgroundColor: kTextLightColor,
                     borderRadius: BorderRadius.circular(15),
+                    onSubmitted: (String value) {
+                      setState(() {
+                        code = int.parse(value);
+                        print(code);
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailsLivraison(
+                                    idCommande: code,
+                                  )),
+                        );
+                      });
+                    },
                   ),
                 ),
-                // ignore: deprecated_member_use
-                RaisedButton(
-                    color: kTextColor,
-                    child: Text(
-                      "Valider",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    textColor: Colors.white,
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    onPressed: () {
-                      print("Verification code");
-                      Navigator.pop(context);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => VerifierLivraison()),
-                      );
-                    }),
                 SizedBox(
                   height: 45,
                 ),
                 RecipeCard(
-                    title: 'Livraisons',
-                    rating: '4.9',
-                    cookTime: '30 min',
-                    thumbnailUrl: "images/livraison.jpg"),
+                    title: 'Livraisons', thumbnailUrl: "images/livraison.jpg"),
                 SizedBox(
                   height: 45,
                 ),
                 RecipeCard(
                   title: 'Commandes',
-                  rating: '4.9',
-                  cookTime: '30 min',
                   thumbnailUrl: 'images/commande.jpg',
                 ),
               ],

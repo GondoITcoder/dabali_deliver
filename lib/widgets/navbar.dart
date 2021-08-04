@@ -1,8 +1,8 @@
-import 'package:dabali_deliver/commandes.dart';
-import 'package:dabali_deliver/home.dart';
-import 'package:dabali_deliver/livraison.dart';
-import 'package:dabali_deliver/login.dart';
-import 'package:dabali_deliver/profil.dart';
+import 'package:dabali_deliver/screens/commandes.dart';
+import 'package:dabali_deliver/screens/dashboard.dart';
+import 'package:dabali_deliver/screens/livraison.dart';
+import 'package:dabali_deliver/screens/login.dart';
+import 'package:dabali_deliver/screens/profil.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatelessWidget {
@@ -42,9 +42,7 @@ class NavBar extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.blue,
               image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(
-                      'images/bglivreur.jpg')),
+                  fit: BoxFit.fill, image: AssetImage('images/bglivreur.jpg')),
             ),
           ),
           ListTile(
@@ -54,7 +52,7 @@ class NavBar extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Home()),
+                MaterialPageRoute(builder: (context) => Dashboard()),
               );
             },
           ),

@@ -1,16 +1,13 @@
-import 'package:dabali_deliver/commandes.dart';
-import 'package:dabali_deliver/livraison.dart';
+import 'package:dabali_deliver/screens/commandes.dart';
+import 'package:dabali_deliver/screens/livraison.dart';
 import 'package:flutter/material.dart';
 
 class RecipeCard extends StatelessWidget {
   final String title;
-  final String rating;
-  final String cookTime;
+
   final String thumbnailUrl;
   RecipeCard({
     required this.title,
-    required this.cookTime,
-    required this.rating,
     required this.thumbnailUrl,
   });
   @override
@@ -85,13 +82,7 @@ class RecipeCard extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.star,
-                          color: Colors.yellow,
-                          size: 18,
-                        ),
                         SizedBox(width: 7),
-                        Text(rating),
                       ],
                     ),
                   ),
@@ -104,13 +95,7 @@ class RecipeCard extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.schedule,
-                          color: Colors.yellow,
-                          size: 18,
-                        ),
                         SizedBox(width: 7),
-                        Text(cookTime),
                       ],
                     ),
                   )
